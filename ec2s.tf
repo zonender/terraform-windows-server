@@ -19,7 +19,7 @@ resource "aws_instance" "media_proxy_ec2" {
   tags = merge(
     var.common_app_tags,
     {
-      Name = "${vars.solution_details["app_name"]}-${vars.solution_details["env"]}"
+      Name = "${var.solution_details["app_name"]}-${var.solution_details["env"]}"
     },
   )
 }
@@ -34,7 +34,7 @@ resource "tls_private_key" "key_pair" {
 }
 # Create the Key Pair
 resource "aws_key_pair" "key_pair" {
-  key_name   = "${vars.shared_ec2_vars["keyname"]}"  
+  key_name   = "${var.shared_ec2_vars["keyname"]}"  
   public_key = tls_private_key.key_pair.public_key_openssh
 }
 # Save file
@@ -47,7 +47,7 @@ resource "local_file" "ssh_key" {
 ####################################################
 
 resource "aws_ebs_volume" "data_vol" {
-  availability_zone = vars.aws_az
+  availability_zone = var.aws_az
   size = 200
   tags = merge(
     var.common_app_tags,

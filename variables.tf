@@ -21,11 +21,12 @@ variable "common_app_tags" {
 variable "amis" {
   type = map
     default = {
-    amznlinux2 = "ami-0022f774911c1d690"
-    ubuntu = "ami-09d56f8956ab235b3"
-    centos7 = "ami-0001378efdafd5401"
-    rhel7 = "ami-029c0fbe456d58bd1"
-    oracle7 = "ami-002c51f3380aa2fad"
+      windows2019 = "ami-09893189de3a034b4"
+      amznlinux2 = "ami-0022f774911c1d690"
+      ubuntu = "ami-09d56f8956ab235b3"
+      centos7 = "ami-0001378efdafd5401"
+      rhel7 = "ami-029c0fbe456d58bd1"
+      oracle7 = "ami-002c51f3380aa2fad"
   }
 }
 

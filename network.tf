@@ -5,7 +5,7 @@ resource "aws_vpc" "vpc" {
   tags = merge(
     var.common_app_tags,
     {
-      Name = "${vars.solution_details["app_name"]}-${vars.solution_details["env"]}-vpc"
+      Name = "${var.solution_details["app_name"]}-${var.solution_details["env"]}-vpc"
     },
   )
 }
@@ -18,7 +18,7 @@ resource "aws_subnet" "private_subnet" {
   tags = merge(
     var.common_app_tags,
     {
-      Name = "${vars.solution_details["app_name"]}-${vars.solution_details["env"]}-private-subnet"
+      Name = "${var.solution_details["app_name"]}-${var.solution_details["env"]}-private-subnet"
     },
   )
 }
@@ -29,7 +29,7 @@ resource "aws_route_table" "private_rt" {
   tags = merge(
     var.common_app_tags,
     {
-      Name = "${vars.solution_details["app_name"]}-${vars.solution_details["env"]}-private-rt"
+      Name = "${var.solution_details["app_name"]}-${var.solution_details["env"]}-private-rt"
     },
   )
 }
@@ -48,7 +48,7 @@ resource "aws_subnet" "public_subnet" {
   tags = merge(
     var.common_app_tags,
     {
-      Name = "${vars.solution_details["app_name"]}-${vars.solution_details["env"]}-public-subnet"
+      Name = "${var.solution_details["app_name"]}-${var.solution_details["env"]}-public-subnet"
     },
   )
 }
@@ -59,7 +59,7 @@ resource "aws_internet_gateway" "igw" {
   tags = merge(
     var.common_app_tags,
     {
-      Name = "${vars.solution_details["app_name"]}-${vars.solution_details["env"]}-igw"
+      Name = "${var.solution_details["app_name"]}-${var.solution_details["env"]}-igw"
     },
   )
 }
@@ -74,7 +74,7 @@ resource "aws_route_table" "public_rt" {
   tags = merge(
     var.common_app_tags,
     {
-      Name = "${vars.solution_details["app_name"]}-${vars.solution_details["env"]}-private-rt"
+      Name = "${var.solution_details["app_name"]}-${var.solution_details["env"]}-private-rt"
     },
   )
 }
